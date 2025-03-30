@@ -1,4 +1,5 @@
 name: Block ZIP Downloads
+
 on:
   push:
     branches:
@@ -8,6 +9,9 @@ jobs:
   delete_zip:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Delete ZIP files
         run: |
           rm -rf *.zip *.tar.gz
