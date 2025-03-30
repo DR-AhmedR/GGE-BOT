@@ -1,1 +1,13 @@
+name: Block ZIP Downloads
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  delete_zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete ZIP files
+        run: |
+          rm -rf *.zip *.tar.gz
